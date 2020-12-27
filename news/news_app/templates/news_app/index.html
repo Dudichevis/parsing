@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Новости</title>
+  </head>
+  <body style="background:#646665">
+     <div class="alert alert-primary">
+       <center>
+         <h1>Новости</h1>
+         <a class='btn btn-danger' href="/">Обновить</a>
+       </center>
+    </div>
+
+     <div class="row p-5">
+       <div class="col-4" style="background:#aafafa">
+         <h3 class="text-center">Unetway новости</h3>
+         {% for i in unetway_list %}
+         <h5>{{i.title }}</h5>
+         <a href="{{ i.url }}" class="btn btn-primary" target="blank">читать</a>
+           <hr>
+         {% endfor %}
+       </div>
+
+       <div class="col-4" style="background:#fcd9e6">
+         <h3 class="text-center">Хабр новости</h3>
+         {% for i in habr_list %}
+         <h5>{{i.title }}</h5>
+         <a href="{{ i.url }}" class="btn btn-primary" target="blank">читать</a>
+           <hr>
+         {% endfor %}
+       </div>
+
+       <div class="col-4" style="background:#36f56c">
+         <h3 class="text-center">PYTHONIST новости</h3>
+         {% for i in pythonist_list %}
+         <h5>{{i.title }}</h5>
+         <a href="{{ i.url }}" class="btn btn-primary" target="blank">читать</a>
+           <hr>
+         {% endfor %}
+       </div>
+     </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  </body>
+</html>
